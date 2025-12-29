@@ -1,4 +1,3 @@
-import { FooterHero } from "./footer-hero"
 import { NekawaLink } from "./nekawa-link"
 import { Heart } from "lucide-react"
 
@@ -13,7 +12,6 @@ export const Footer = () => {
           &copy; 2025 - <NekawaLink>Nekawa</NekawaLink>
         </p>
       </div>
-      <FooterHero />
     </footer>
   )
 }

@@ -1,6 +1,6 @@
 import dayjs from "dayjs"
 import { PreviousButton } from "@/components/ui/previous-button"
-import { getBlogs } from "@/features/blogs/service/getBlogs"
+import { getBlogs } from "@/lib/blogs"
 import { notFound } from "next/navigation"
 import "dayjs/locale/fr"
 
@@ -11,8 +11,8 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }))
 }
 
-const BlogPage = async (props: { params: Promise<{ slug: string }> }) => {
-  const { slug } = await props.params
+const BlogPage = async (props: { params: { slug: string } }) => {
+  const { slug } = props.params
   const blogs = await getBlogs()
   const blog = blogs.find((blog) => blog.slug === slug) || null
 

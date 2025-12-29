@@ -4,7 +4,7 @@ import { BlogPreview } from "./blog-preview"
 import type { Blog } from "@/lib/definitions"
 import dayjs from "dayjs"
 import { Skeleton } from "./ui/skeleton"
-import { getBlogs } from "@/features/blogs/service/getBlogs"
+import { getBlogs } from "@/lib/blogs"
 import { PenLine } from "lucide-react"
 import "dayjs/locale/fr"
 

@@ -65,7 +65,7 @@ export const Navbar = () => {
                   nayko.dev
                 </Link>
                 <ThemeToggle />
-                <Drawer onClose={() => setOpenDrawer(false)} open={openDrawer}>
+                <Drawer onOpenChange={setOpenDrawer} open={openDrawer}>
                   <DrawerTrigger asChild>
                     <Button
                       size="icon"
