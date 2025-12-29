@@ -1,12 +1,17 @@
 const About = () => {
   return (
-    <div className="flex flex-col h-full lg:flex-row px-6 gap-8">
-      <div className="px-2 max-w-3xl text-muted-foreground gap-6 text-lg flex w-full flex-col order-last lg:order-first font-mono">
-        <h1 className="text-4xl md:text-5xl text-foreground font-bold font-sans text-balance">
-          Hey, I'm Alexis <span className="text-primary">(nayko)</span>, a French-Swiss software engineer
-        </h1>
+    <div className="flex flex-col h-full lg:flex-row px-4 sm:px-6 lg:px-8 gap-8 max-w-4xl mx-auto">
+      <div className="text-muted-foreground gap-5 sm:gap-6 text-base sm:text-lg flex w-full flex-col font-mono">
+        <div className="space-y-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-foreground font-bold font-sans">
+            Hey, I'm Alexis <span className="text-primary">(nayko)</span>
+          </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-sans font-medium">
+            French-Swiss software engineer
+          </p>
+        </div>
 
-        <p>
+        <p className="leading-relaxed">
           I build with <span className="text-foreground font-medium">Next.js</span>,{" "}
           <span className="text-foreground font-medium">React</span>,{" "}
           <span className="text-foreground font-medium">TypeScript</span>, and{" "}
@@ -16,7 +21,7 @@ const About = () => {
           I'm reliable, I ship fast, and I take ownership of what I build.
         </p>
 
-        <p>
+        <p className="leading-relaxed">
           I'm currently expanding into <span className="text-primary font-medium">cybersecurity</span> — there's
           something about <span className="text-foreground font-medium">bug bounties</span> and{" "}
           <span className="text-foreground font-medium">red teaming</span> that feels like solving the ultimate puzzle.
@@ -26,7 +31,7 @@ const About = () => {
           limits.
         </p>
 
-        <p>
+        <p className="leading-relaxed">
           Off the clock: husband to an amazing wife, dad to a little legend of a son, and owner of a wonderfully chaotic{" "}
           <span className="text-foreground font-medium">German Shepherd</span>. I fuel up on{" "}
           <span className="text-foreground font-medium">ramen</span>, blast{" "}
@@ -35,7 +40,7 @@ const About = () => {
           <span className="text-foreground font-medium">League of Legends</span> session.
         </p>
 
-        <p>
+        <p className="leading-relaxed">
           Big fan of <span className="text-foreground font-medium">SpaceX</span>,{" "}
           <span className="text-foreground font-medium">Tesla</span>,{" "}
           <span className="text-foreground font-medium">xAI</span>, and everything{" "}
@@ -43,7 +48,7 @@ const About = () => {
           first, always.
         </p>
 
-        <p className="text-foreground">
+        <p className="text-foreground leading-relaxed">
           If you're looking for someone who can work independently, deliver consistently, and actually cares about what
           they ship — let's talk. <span className="text-muted-foreground">(Ramen recommendations also welcome.)</span>
         </p>
