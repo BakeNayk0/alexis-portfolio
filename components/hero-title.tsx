@@ -67,11 +67,13 @@ export const HeroTitle = () => {
       </div>
 
       <p className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left text-muted-foreground leading-relaxed opacity-0 animate-fade-up stagger-3">
-        I am a French software engineer passionate about designing and evolving web and mobile applications, using
-        modern technologies such as <span className="text-primary-300 font-medium">Next.js</span>,{" "}
-        <span className="text-primary-300 font-medium">React Native</span>,{" "}
-        <span className="text-primary-300 font-medium">Nest.js</span>, and{" "}
-        <span className="text-primary-300 font-medium">Tailwind</span>.
+        French–Swiss software engineer working with <span className="text-primary-300 font-medium">Next.js</span>,{" "}
+        <span className="text-primary-300 font-medium">React</span>, and{" "}
+        <span className="text-primary-300 font-medium">Python</span>. I like to build things — I use{" "}
+        <span className="text-primary-300 font-medium">AI</span> to prototype fast and iterate quickly, then tighten
+        everything up with proper structure, testing, and review. Currently exploring{" "}
+        <span className="text-primary-300 font-medium">cybersecurity</span> to keep pushing into more{" "}
+        <span className="text-primary-300 font-medium">challenging</span> territory.
       </p>
     </div>
   )
