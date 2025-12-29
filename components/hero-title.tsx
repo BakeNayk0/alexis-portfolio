@@ -22,7 +22,7 @@ export const HeroTitle = () => {
         <Link target="_blank" href="https://www.linkedin.com/in/alexis-sanchis-617301129/" className="group">
           <Button
             size="icon"
-            className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+            className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer"
             variant="ghost"
           >
             <Linkedin className="h-4 w-4" />
@@ -31,7 +31,7 @@ export const HeroTitle = () => {
         <Link href="mailto:sanchis.alexis@gmail.com" className="group">
           <Button
             size="icon"
-            className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+            className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer"
             variant="ghost"
           >
             <Mail className="h-4 w-4" />
@@ -40,7 +40,7 @@ export const HeroTitle = () => {
         <Link target="_blank" href="https://x.com/Nayk0_x" className="group">
           <Button
             size="icon"
-            className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+            className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer"
             variant="ghost"
           >
             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
@@ -50,7 +50,7 @@ export const HeroTitle = () => {
         </Link>
         <Link href="/about">
           <Button
-            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary text-primary-300 hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300 group"
+            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary text-primary-300 hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300 group cursor-pointer"
             variant="ghost"
           >
             <Image
