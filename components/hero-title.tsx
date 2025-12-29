@@ -7,7 +7,9 @@ export const HeroTitle = () => {
   return (
     <div className="w-full flex flex-col justify-center mx-auto lg:mx-0 gap-8">
       <div className="flex flex-col gap-3 opacity-0 animate-fade-up">
-        <p className="text-sm font-medium tracking-wider text-primary-400 uppercase">Software Engineer</p>
+        <p className="text-sm font-medium tracking-wider text-primary-400 uppercase text-center lg:text-left">
+          Software Engineer
+        </p>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl text-center lg:text-left font-bold tracking-tight">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500">
             Hey, I&apos;m
