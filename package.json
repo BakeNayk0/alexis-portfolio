@@ -28,6 +28,7 @@
     "motion": "^12.4.10",
     "next": "15.5.9",
     "next-mdx-remote": "^5.0.0",
+    "next-themes": "latest",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-google-recaptcha": "^3.1.0",
@@ -36,6 +37,7 @@
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "1.0.7",
+    "tw-animate-css": "latest",
     "vaul": "^1.1.2",
     "webpack": "latest",
     "zod": "^3.24.2"
