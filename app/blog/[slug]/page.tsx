@@ -11,8 +11,8 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }))
 }
 
-const BlogPage = async (props: { params: { slug: string } }) => {
-  const { slug } = props.params
+const BlogPage = async (props: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await props.params
   const blogs = await getBlogs()
   const blog = blogs.find((blog) => blog.slug === slug) || null
 
