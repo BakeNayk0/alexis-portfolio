@@ -1,5 +1,3 @@
-"use client"
-
 import type { Blog } from "@/lib/definitions"
 
 export const blogs: Blog[] = [
