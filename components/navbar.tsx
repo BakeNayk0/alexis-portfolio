@@ -20,6 +20,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer"
+import { ThemeToggle } from "./theme-toggle"
 
 export const Navbar = () => {
   const ref = useRef<HTMLElement>(null)
@@ -42,13 +43,13 @@ export const Navbar = () => {
         <div
           className={cn(
             "w-full max-w-6xl rounded-b-3xl border-b backdrop-blur duration-200",
-            isIntersecting ? "border-transparent bg-zinc-900/0" : "border-primary-300 bg-zinc-900/50",
+            isIntersecting ? "border-transparent bg-background/0" : "border-primary/20 bg-background/80",
           )}
         >
           <div className="flex items-center gap-3 px-4 py-4 sm:px-8">
             <Link
               href="/"
-              className="flex h-10 w-10 items-center justify-center rounded-full ring ring-2 ring-primary-200"
+              className="flex h-10 w-10 items-center justify-center rounded-full ring ring-2 ring-primary/30"
             >
               <Avatar>
                 <AvatarImage className="rounded-full" src="/nekawa_favicon.png" />
@@ -63,6 +64,7 @@ export const Navbar = () => {
                 >
                   nayko.dev
                 </Link>
+                <ThemeToggle />
                 <Drawer onClose={() => setOpenDrawer(false)} open={openDrawer}>
                   <DrawerTrigger asChild>
                     <Button
@@ -89,8 +91,8 @@ export const Navbar = () => {
                             href={href}
                             onClick={() => setOpenDrawer(false)}
                             className={cn(
-                              "text-sm transition-all hover:text-primary-400 font-mono",
-                              pathname.includes(href) && "text-primary-400",
+                              "text-sm transition-all hover:text-primary font-mono",
+                              pathname.includes(href) && "text-primary",
                             )}
                           >
                             {description}
@@ -114,14 +116,12 @@ export const Navbar = () => {
                   <Link
                     key={href}
                     href={href}
-                    className={cn(
-                      "transition-all hover:text-primary-400",
-                      pathname.includes(href) && "text-primary-400",
-                    )}
+                    className={cn("transition-all hover:text-primary", pathname.includes(href) && "text-primary")}
                   >
                     {label}
                   </Link>
                 ))}
+                <ThemeToggle />
               </nav>
             )}
           </div>

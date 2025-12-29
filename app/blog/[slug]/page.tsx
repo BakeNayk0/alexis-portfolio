@@ -26,32 +26,29 @@ const BlogPage = async (props: { params: Promise<{ slug: string }> }) => {
             <span>
               <PreviousButton className="mr-2" />
             </span>
-            <p className="text-primary-200 mr-2">|</p>
+            <p className="text-primary mr-2">|</p>
             <p className="capitalize">{dayjs(blog.createdAt).format("MMMM YYYY")}</p>
           </div>
-          <h1 className="text-5xl font-medium font-sans">{blog.title}</h1>
-          <article className="prose prose-invert prose-lg max-w-none">
+          <h1 className="text-5xl font-medium font-sans text-foreground">{blog.title}</h1>
+          <article className="prose prose-lg max-w-none dark:prose-invert">
             {blog.content?.split("\n\n").map((paragraph, index) => {
-              // Handle headings
               if (paragraph.startsWith("## ")) {
                 return (
-                  <h2 key={index} className="text-2xl font-semibold text-white mt-8 mb-4">
+                  <h2 key={index} className="text-2xl font-semibold text-foreground mt-8 mb-4">
                     {paragraph.replace("## ", "")}
                   </h2>
                 )
               }
-              // Handle code blocks
               if (paragraph.startsWith("```")) {
                 const lines = paragraph.split("\n")
                 const lang = lines[0].replace("```", "")
                 const code = lines.slice(1, -1).join("\n")
                 return (
-                  <pre key={index} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 overflow-x-auto my-4">
-                    <code className="text-sm font-mono text-zinc-300">{code}</code>
+                  <pre key={index} className="bg-muted border border-border rounded-lg p-4 overflow-x-auto my-4">
+                    <code className="text-sm font-mono text-foreground">{code}</code>
                   </pre>
                 )
               }
-              // Handle lists
               if (paragraph.startsWith("- ") || paragraph.startsWith("1. ")) {
                 const items = paragraph.split("\n").filter(Boolean)
                 const isOrdered = paragraph.startsWith("1. ")
@@ -59,19 +56,18 @@ const BlogPage = async (props: { params: Promise<{ slug: string }> }) => {
                 return (
                   <ListTag
                     key={index}
-                    className={`${isOrdered ? "list-decimal" : "list-disc"} list-inside space-y-2 my-4 text-zinc-300`}
+                    className={`${isOrdered ? "list-decimal" : "list-disc"} list-inside space-y-2 my-4 text-muted-foreground`}
                   >
                     {items.map((item, i) => (
-                      <li key={i} className="text-zinc-300">
+                      <li key={i} className="text-muted-foreground">
                         {item.replace(/^[-\d.]\s*\*?\*?/, "").replace(/\*\*/g, "")}
                       </li>
                     ))}
                   </ListTag>
                 )
               }
-              // Regular paragraphs
               return (
-                <p key={index} className="text-zinc-300 leading-relaxed my-4">
+                <p key={index} className="text-muted-foreground leading-relaxed my-4">
                   {paragraph}
                 </p>
               )
