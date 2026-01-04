@@ -7,13 +7,18 @@ interface PreviousButtonProps {
   className?: string
   onClick?: () => void
   asChild?: boolean
+  href?: string
 }
 
-export const PreviousButton = ({ className, onClick, asChild }: PreviousButtonProps) => {
+export const PreviousButton = ({ className, onClick, asChild, href }: PreviousButtonProps) => {
   const router = useRouter()
 
   const handleClick = () => {
-    router.push("/")
+    if (href) {
+      router.push(href)
+    } else {
+      router.back()
+    }
   }
 
   return (

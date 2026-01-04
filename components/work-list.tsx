@@ -19,7 +19,7 @@ const getWorks = async (): Promise<Work[] | null> => {
       },
       {
         title: "Arche MC2",
-        job: "Lead Android developer",
+        job: "Mobile Developer",
         date: "2018 - 2023",
         url: "arche-mc2.png",
       },

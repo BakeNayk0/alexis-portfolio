@@ -2,6 +2,7 @@ import type { Skill } from "@/lib/definitions"
 import { cn } from "@/lib/utils"
 import { OuterAvatar } from "./ui/avatar"
 import { Skeleton } from "./ui/skeleton"
+import Image from "next/image"
 
 const getSkills = async () => {
   try {
@@ -10,7 +11,7 @@ const getSkills = async () => {
         title: "Next.js",
         description:
           "A React framework that offers features like server-side rendering and static site generation, enhancing performance and SEO.",
-        url: "tech_nextjs.svg",
+        url: "nextjs-icon",
       },
       {
         title: "React",
@@ -50,7 +51,14 @@ export const SkillList = async () => {
     <>
       {skills?.map(({ title, url, description }: Skill) => (
         <div key={title} className="flex items-start text-sm gap-2">
-          <OuterAvatar src={url} />
+          {title === "Next.js" ? (
+            <div className="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden border border-border p-1">
+              <Image src="/nextjs-icon-dark.svg" alt={title} width={40} height={40} className="dark:block hidden" />
+              <Image src="/nextjs-icon-light.svg" alt={title} width={40} height={40} className="dark:hidden block" />
+            </div>
+          ) : (
+            <OuterAvatar src={url} />
+          )}
           <div className="flex flex-col gap-2">
             <h1 className="text-foreground">{title}</h1>
             <p className={cn("text-muted-foreground")}>{description}</p>
