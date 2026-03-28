@@ -10,32 +10,32 @@ const getSkills = async () => {
       {
         title: "Next.js",
         description:
-          "A React framework that offers features like server-side rendering and static site generation, enhancing performance and SEO.",
+          "My primary framework for building full-stack web applications. I rely on it for server-side rendering, API routes, and everything in between.",
         url: "nextjs-icon",
       },
       {
         title: "React",
         description:
-          "A JavaScript library for building user interfaces, well known for its efficient and flexible approach to creating complex UIs using reusable components.",
+          "The foundation of my front-end work. I build reusable, composable UIs and manage complex client-side state with confidence.",
         url: "tech_react.svg",
+      },
+      {
+        title: "TypeScript",
+        description:
+          "I write TypeScript by default. Strong typing catches bugs early, improves refactoring, and makes codebases easier to maintain over time.",
+        url: "tech_typescript.svg",
       },
       {
         title: "Nest.js",
         description:
-          "A modern backend framework built with TypeScript that simplifies the creation of scalable and maintainable web applications.",
+          "My go-to for scalable backend services. I appreciate its modular architecture and how naturally it maps to domain-driven design.",
         url: "tech_nestjs.svg",
       },
       {
-        title: "Laravel",
+        title: "Python",
         description:
-          "A popular PHP framework used for building modern web applications. It follows the MVC (Model-View-Controller) architectural pattern and provides an elegant syntax that simplifies tasks like routing, authentication, sessions, and caching.",
-        url: "tech_laravel.svg",
-      },
-      {
-        title: "Tailwind",
-        description:
-          "A popular utility-first CSS framework for quickly building modern, responsive user interfaces. Instead of writing custom CSS, you use predefined utility classes directly in your HTML to style elements.",
-        url: "tech_tailwind.svg",
+          "Used for scripting, automation, and cybersecurity tooling. Its versatility makes it invaluable for CTF challenges, exploit development, and quick prototyping.",
+        url: "tech_python.svg",
       },
     ]
   } catch (error) {
@@ -50,7 +50,7 @@ export const SkillList = async () => {
   return (
     <>
       {skills?.map(({ title, url, description }: Skill) => (
-        <div key={title} className="flex items-start text-sm gap-2">
+        <div key={title} className="flex items-start text-sm gap-3">
           {title === "Next.js" ? (
             <div className="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden border border-border p-1">
               <Image src="/nextjs-icon-dark.svg" alt={title} width={40} height={40} className="dark:block hidden" />
@@ -59,9 +59,9 @@ export const SkillList = async () => {
           ) : (
             <OuterAvatar src={url} />
           )}
-          <div className="flex flex-col gap-2">
-            <h1 className="text-foreground">{title}</h1>
-            <p className={cn("text-muted-foreground")}>{description}</p>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-foreground font-medium">{title}</h1>
+            <p className={cn("text-muted-foreground leading-relaxed")}>{description}</p>
           </div>
         </div>
       ))}
@@ -72,14 +72,14 @@ export const SkillList = async () => {
 export const SkillListSkeleton = () => {
   return (
     <>
-      {Array.from({ length: 4 }, (_, i) => i).map((_, index) => (
-        <div key={index} className="min-w-xl lg:min-w-6xl w-full flex items-center gap-2">
+      {Array.from({ length: 5 }, (_, i) => i).map((_, index) => (
+        <div key={index} className="w-full flex items-center gap-2">
           <div className="p-2 bg-muted rounded-full">
             <Skeleton className="w-8 h-8 rounded-full" />
           </div>
           <div className="flex flex-col gap-2 w-full">
             <Skeleton className="w-12 h-4" />
-            <Skeleton className="w-full h-12" />
+            <Skeleton className="w-full h-10" />
           </div>
         </div>
       ))}

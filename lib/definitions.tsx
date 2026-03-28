@@ -1,4 +1,4 @@
-import { Code, CircleUser, AtSign } from "lucide-react"
+import { CircleUser, AtSign } from "lucide-react"
 import type { ReactNode } from "react"
 
 export type Work = {
@@ -43,12 +43,6 @@ export const routes: Route[] = [
     label: "About",
     description: "Know a little bit more about me",
     icon: <CircleUser size={"20"} />,
-  },
-  {
-    href: "/techs",
-    label: "Techs",
-    description: "The tools I'm using to craft apps",
-    icon: <Code size={"20"} />,
   },
   {
     href: "/contacts",
