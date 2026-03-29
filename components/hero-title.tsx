@@ -54,7 +54,7 @@ export const HeroTitle = () => {
         </Link>
         <Link href="/about">
           <Button
-            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary text-primary-600 dark:text-primary-300 hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300 group cursor-pointer"
+            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary dark:hover:bg-primary/20 text-primary-300 hover:text-primary-foreground dark:hover:text-primary-200 border border-primary/20 hover:border-primary dark:hover:border-primary/40 transition-all duration-300 group cursor-pointer"
             variant="ghost"
           >
             <Image
@@ -62,7 +62,7 @@ export const HeroTitle = () => {
               alt="Alexis"
               width={32}
               height={32}
-              className="w-8 h-8 object-cover rounded-full ring-2 ring-primary/30 group-hover:ring-primary-foreground/30 transition-all"
+              className="w-8 h-8 object-cover rounded-full ring-2 ring-primary/30 group-hover:ring-primary-foreground/30 dark:group-hover:ring-primary/50 transition-all"
             />
             <span className="font-medium">About me</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
