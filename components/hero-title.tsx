@@ -71,32 +71,28 @@ export const HeroTitle = () => {
       </div>
 
       <p className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left text-muted-foreground leading-relaxed opacity-0 animate-fade-up stagger-3">
-        French–Swiss software engineer working with{" "}
+        French–Swiss software engineer focused on{" "}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
           Next.js
         </span>
         ,{" "}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
-          React
+          Nest.js
         </span>
         , and{" "}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
           Python
         </span>
-        . I like to build things — I use{" "}
+        . I&apos;m a collaborative developer who values continuous learning and
+        building reliable applications. I enjoy using{" "}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
-          AI
+          modern AI tools
         </span>{" "}
-        to prototype fast and iterate quickly, then tighten everything up with
-        proper structure, testing, and review. Currently exploring{" "}
+        to work efficiently and am currently expanding my skills into{" "}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
           cybersecurity
         </span>{" "}
-        to keep pushing into more{" "}
-        <span className="text-primary-600 dark:text-primary-300 font-medium">
-          challenging
-        </span>{" "}
-        territory.
+        to build safer systems.
       </p>
     </div>
   );
