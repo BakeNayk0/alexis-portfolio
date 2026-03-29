@@ -11,7 +11,7 @@ const Overview = () => {
         <div className="h-fit flex flex-col gap-6 bg-card/50 backdrop-blur-sm border border-border/50 p-6 rounded-xl opacity-0 animate-fade-up stagger-2">
           <div className="flex flex-row gap-3 items-center">
             <div className="p-2 rounded-lg bg-primary/10">
-              <BriefcaseBusiness className="h-5 w-5 text-primary-400" />
+              <BriefcaseBusiness className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </div>
             <h2 className="font-semibold text-foreground">Experience</h2>
           </div>
@@ -28,7 +28,7 @@ const Overview = () => {
         <div className="h-fit flex flex-col gap-6 bg-card/50 backdrop-blur-sm border border-border/50 p-6 rounded-xl opacity-0 animate-fade-up stagger-3">
           <div className="flex flex-row gap-3 items-center">
             <div className="p-2 rounded-lg bg-primary/10">
-              <Binary className="h-5 w-5 text-primary-400" />
+              <Binary className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </div>
             <h2 className="font-semibold text-foreground">Skills & Technologies</h2>
           </div>
