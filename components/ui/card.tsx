@@ -10,8 +10,10 @@ export const Card = ({ children, className, onClick, ...props }: CardProps) => {
   return (
     <div
       onClick={onClick}
-      className={cn(`flex p-6 flex-col rounded-xl gap-4 hover:bg-primary-200/5 hover:border-primary-400 border border-transparent 
-      transition-all duration-200`, className)}
+      className={cn(
+        "flex p-6 flex-col rounded-xl gap-4 hover:bg-primary-600/5 dark:hover:bg-primary-200/5 hover:border-primary-600 dark:hover:border-primary-400 border border-transparent transition-all duration-200",
+        className,
+      )}
     >
       {children}
     </div>

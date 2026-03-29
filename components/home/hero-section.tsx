@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="w-full mx-auto justify-center items-center flex flex-col gap-4 opacity-0 animate-scale-in">
         <HeroAvatar />
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Earth size={16} className="text-primary-400" />
+          <Earth size={16} className="text-primary-600 dark:text-primary-400" />
           <span>Based in France</span>
         </div>
         <div className="flex gap-2 items-center">

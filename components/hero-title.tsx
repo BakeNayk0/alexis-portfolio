@@ -1,17 +1,17 @@
-import { Button } from "@/components/ui/button"
-import { Linkedin, Mail, ArrowRight } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { Button } from "@/components/ui/button";
+import { Linkedin, Mail, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export const HeroTitle = () => {
   return (
     <div className="w-full flex flex-col justify-center mx-auto lg:mx-0 gap-8">
       <div className="flex flex-col gap-3 opacity-0 animate-fade-up">
-        <p className="text-sm font-medium tracking-wider text-primary-400 uppercase text-center lg:text-left">
+        <p className="text-sm font-medium tracking-wider text-primary-600 dark:text-primary-400 uppercase text-center lg:text-left">
           Software Engineer
         </p>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl text-center lg:text-left font-bold tracking-tight">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 dark:from-primary-300 dark:via-primary-400 dark:to-primary-500">
             Hey, I&apos;m
           </span>{" "}
           <span className="text-foreground">Alexis</span>
@@ -19,7 +19,11 @@ export const HeroTitle = () => {
       </div>
 
       <div className="flex gap-3 items-center justify-center lg:justify-start opacity-0 animate-fade-up stagger-2">
-        <Link target="_blank" href="https://www.linkedin.com/in/alexis-sanchis-617301129/" className="group">
+        <Link
+          target="_blank"
+          href="https://www.linkedin.com/in/alexis-sanchis-617301129/"
+          className="group"
+        >
           <Button
             size="icon"
             className="rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer"
@@ -50,7 +54,7 @@ export const HeroTitle = () => {
         </Link>
         <Link href="/about">
           <Button
-            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary text-primary-300 hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300 group cursor-pointer"
+            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary text-primary-600 dark:text-primary-300 hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300 group cursor-pointer"
             variant="ghost"
           >
             <Image
@@ -67,14 +71,33 @@ export const HeroTitle = () => {
       </div>
 
       <p className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left text-muted-foreground leading-relaxed opacity-0 animate-fade-up stagger-3">
-        French–Swiss software engineer working with <span className="text-primary-300 font-medium">Next.js</span>,{" "}
-        <span className="text-primary-300 font-medium">React</span>, and{" "}
-        <span className="text-primary-300 font-medium">Python</span>. I like to build things — I use{" "}
-        <span className="text-primary-300 font-medium">AI</span> to prototype fast and iterate quickly, then tighten
-        everything up with proper structure, testing, and review. Currently exploring{" "}
-        <span className="text-primary-300 font-medium">cybersecurity</span> to keep pushing into more{" "}
-        <span className="text-primary-300 font-medium">challenging</span> territory.
+        French–Swiss software engineer working with{" "}
+        <span className="text-primary-600 dark:text-primary-300 font-medium">
+          Next.js
+        </span>
+        ,{" "}
+        <span className="text-primary-600 dark:text-primary-300 font-medium">
+          React
+        </span>
+        , and{" "}
+        <span className="text-primary-600 dark:text-primary-300 font-medium">
+          Python
+        </span>
+        . I like to build things — I use{" "}
+        <span className="text-primary-600 dark:text-primary-300 font-medium">
+          AI
+        </span>{" "}
+        to prototype fast and iterate quickly, then tighten everything up with
+        proper structure, testing, and review. Currently exploring{" "}
+        <span className="text-primary-600 dark:text-primary-300 font-medium">
+          cybersecurity
+        </span>{" "}
+        to keep pushing into more{" "}
+        <span className="text-primary-600 dark:text-primary-300 font-medium">
+          challenging
+        </span>{" "}
+        territory.
       </p>
     </div>
-  )
-}
+  );
+};
