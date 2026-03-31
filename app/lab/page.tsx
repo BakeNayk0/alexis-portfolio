@@ -29,15 +29,17 @@ async function BackendStatusWidget() {
   }
 
   try {
+    // Implement 60-second caching to protect the Nest.js API from being spammed by bots.
+    // Even if the page is hit 10k times, Vercel will only call the backend once per minute.
     const res = await fetch(`${backendUrl}/api/v1/status`, {
-      cache: "no-store",
+      next: { revalidate: 60 },
       headers: {
         "x-api-key": apiKey,
         "Content-Type": "application/json",
       },
     });
 
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) throw new Error("Service Unavailable");
 
     const data = (await res.json()) as BackendStatus;
     const isOk = data.status === "ok";
@@ -87,8 +89,7 @@ async function BackendStatusWidget() {
           <h2 className="text-lg font-semibold">Connection Failed</h2>
         </div>
         <p className="text-sm text-muted-foreground">
-          Unable to reach the backend service.{" "}
-          {error instanceof Error ? error.message : "Unknown error occurred."}
+          Unable to reach the backend service. The system status could not be retrieved at this time.
         </p>
       </Card>
     );
