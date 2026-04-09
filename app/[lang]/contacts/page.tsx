@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { Linkedin, Mail, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import { getDictionary } from "@/lib/dictionaries"
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
@@ -9,37 +10,40 @@ const XIcon = () => (
   </svg>
 )
 
-const socials = [
+const socialsBase = [
   {
     icon: <XIcon />,
     href: "https://x.com/Nayk0_x",
-    label: "Follow me on X",
     handle: "@Nayk0_x",
-    description: "Tech thoughts & updates",
   },
   {
     icon: <Mail className="w-5 h-5" />,
     href: "mailto:sanchis.alexis@gmail.com",
-    label: "Send an email",
     handle: "sanchis.alexis@gmail.com",
-    description: "For work inquiries",
   },
   {
     icon: <Linkedin className="w-5 h-5" />,
     href: "https://www.linkedin.com/in/alexis-sanchis-617301129/",
-    label: "Connect on LinkedIn",
     handle: "Alexis Sanchis",
-    description: "Professional network",
   },
 ]
 
-export default function Contact() {
+export default async function Contact(props: { params: Promise<{ lang: string }> }) {
+  const params = await props.params;
+  const dict = await getDictionary(params.lang);
+
+  const socials = socialsBase.map((s, index) => ({
+    ...s,
+    label: dict.contact_page.socials[index].label,
+    description: dict.contact_page.socials[index].description,
+  }))
+
   return (
     <main className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 py-16 sm:py-24">
       <div className="text-center mb-12 animate-fade-up opacity-0">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-foreground mb-3">Get in Touch</h1>
+        <h1 className="text-3xl sm:text-4xl font-semibold text-foreground mb-3">{dict.contact_page.title}</h1>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Feel free to reach out for collaborations, opportunities, or just a friendly chat.
+          {dict.contact_page.subtitle}
         </p>
       </div>
 
