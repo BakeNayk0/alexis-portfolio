@@ -2,17 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Dictionary } from "@/lib/dictionaries";
 
-export const HeroTitle = () => {
+export const HeroTitle = ({ dict }: { dict: Dictionary }) => {
   return (
     <div className="w-full flex flex-col justify-center mx-auto lg:mx-0 gap-8">
       <div className="flex flex-col gap-3 opacity-0 animate-fade-up">
         <p className="text-sm font-medium tracking-wider text-primary-600 dark:text-primary-400 uppercase text-center lg:text-left">
-          Software Engineer
+          {dict.hero_title.role}
         </p>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl text-center lg:text-left font-bold tracking-tight">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 dark:from-primary-300 dark:via-primary-400 dark:to-primary-500">
-            Hey, I&apos;m
+            {dict.hero_title.hey}
           </span>{" "}
           <span className="text-foreground">Alexis</span>
         </h1>
@@ -54,7 +55,7 @@ export const HeroTitle = () => {
         </Link>
         <Link href="/about">
           <Button
-            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary dark:hover:bg-primary/20 text-primary-300 hover:text-primary-foreground dark:hover:text-primary-200 border border-primary/20 hover:border-primary dark:hover:border-primary/40 transition-all duration-300 group cursor-pointer"
+            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary dark:hover:bg-primary/20 text-primary-700 dark:text-primary-300 hover:text-primary-foreground dark:hover:text-primary-200 border border-primary/20 hover:border-primary dark:hover:border-primary/40 transition-all duration-300 group cursor-pointer"
             variant="ghost"
           >
             <Image
@@ -64,35 +65,34 @@ export const HeroTitle = () => {
               height={32}
               className="w-8 h-8 object-cover rounded-full ring-2 ring-primary/30 group-hover:ring-primary-foreground/30 dark:group-hover:ring-primary/50 transition-all"
             />
-            <span className="font-medium">About me</span>
+            <span className="font-medium">{dict.hero_title.about_me}</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </Link>
       </div>
 
       <p className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left text-muted-foreground leading-relaxed opacity-0 animate-fade-up stagger-3">
-        French–Swiss software engineer focused on{" "}
+        {dict.hero_title.desc_1}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
           Next.js
         </span>
-        ,{" "}
+        {dict.hero_title.desc_2}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
           Nest.js
         </span>
-        , and{" "}
+        {dict.hero_title.desc_3}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
           Python
         </span>
-        . I&apos;m a collaborative developer who values continuous learning and
-        building reliable applications. I enjoy using{" "}
+        {dict.hero_title.desc_4}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
-          modern AI tools
+          {dict.hero_title.modern_ai}
         </span>{" "}
-        to work efficiently and am currently expanding my skills into{" "}
+        {dict.hero_title.desc_5}
         <span className="text-primary-600 dark:text-primary-300 font-medium">
-          cybersecurity
+          {dict.hero_title.cybersecurity}
         </span>{" "}
-        to build safer systems.
+        {dict.hero_title.desc_6}
       </p>
     </div>
   );

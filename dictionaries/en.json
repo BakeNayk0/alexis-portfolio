@@ -1,0 +1,123 @@
+{
+  "navbar": {
+    "dive": "Dive into my world, roam around",
+    "visit_other": "You can also visit Nekawa Tree for other projects, with the button below.",
+    "visit_nekawa": "Visit Nekawa"
+  },
+  "routes": {
+    "about": {
+      "label": "About",
+      "description": "Know a little bit more about me"
+    },
+    "contacts": {
+      "label": "Contacts",
+      "description": "How to contact me"
+    }
+  },
+  "hero": {
+    "based_in": "Based in France",
+    "french": "French",
+    "english": "English"
+  },
+  "hero_title": {
+    "role": "Software Engineer",
+    "hey": "Hey, I'm",
+    "about_me": "About me",
+    "modern_ai": "modern AI tools",
+    "cybersecurity": "cybersecurity",
+    "desc_1": "French–Swiss software engineer focused on ",
+    "desc_2": ", ",
+    "desc_3": ", and ",
+    "desc_4": ". I'm a collaborative developer who values continuous learning and building reliable applications. I enjoy using ",
+    "desc_5": " to work efficiently and am currently expanding my skills into ",
+    "desc_6": " to build safer systems."
+  },
+  "overview": {
+    "experience": "Experience",
+    "view_resume": "View Full Resume",
+    "skills": "Skills & Technologies"
+  },
+  "works": [
+    {
+      "title": "Elipce Solutions",
+      "job": "Software Engineer",
+      "date": "2025 - Present"
+    },
+    {
+      "title": "CBA Informatique Libérale",
+      "job": "Fullstack developer",
+      "date": "2023 - 2024"
+    },
+    {
+      "title": "Arche MC2",
+      "job": "Mobile Developer",
+      "date": "2018 - 2023"
+    },
+    {
+      "title": "Logic'gram",
+      "job": "Analyst developer",
+      "date": "2017 - 2018"
+    },
+    {
+      "title": "Master in Software Engineering",
+      "job": "Student",
+      "date": "2015 - 2017"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Next.js",
+      "description": "My primary framework for building full-stack web applications. I rely on it for server-side rendering, API routes, and everything in between."
+    },
+    {
+      "title": "React",
+      "description": "The foundation of my front-end work. I build reusable, composable UIs and manage complex client-side state with confidence."
+    },
+    {
+      "title": "TypeScript",
+      "description": "I write TypeScript by default. Strong typing catches bugs early, improves refactoring, and makes codebases easier to maintain over time."
+    },
+    {
+      "title": "Nest.js",
+      "description": "My go-to for scalable backend services. I appreciate its modular architecture and how naturally it maps to domain-driven design."
+    },
+    {
+      "title": "Python",
+      "description": "Used for scripting, automation, and cybersecurity tooling. Its versatility makes it invaluable for CTF challenges, exploit development, and quick prototyping."
+    }
+  ],
+  "about_page": {
+    "hey": "Hey, I'm Alexis",
+    "subtitle": "French–Swiss software engineer",
+    "p1_1": "I build with ",
+    "p1_2": ", ",
+    "p1_3": ", ",
+    "p1_4": ", and ",
+    "p1_5": " — whether it's for companies or collaborative projects. I value clear communication and believe that the best products come from strong team alignment. While I can work independently when needed, I'm always eager to learn from others and contribute my own expertise to help the team succeed.",
+    "p2_1": "I'm also passionate about the intersection of development and security. I'm currently developing my skills in ",
+    "p2_2": ", with a focus on web security and entry-level security practices. My goal is to combine my engineering background with a security-first mindset to help build safer, more resilient systems.",
+    "p3_1": "I'm a big advocate for modern developer tools. I've integrated ",
+    "p3_2": ", ",
+    "p3_3": ", and ",
+    "p3_4": " into my daily workflow, which allows me to focus on solving complex problems and prototype efficiently. I'm excited about the future of AI in software engineering and how it can empower teams to build better software, faster.",
+    "p4": "If you're looking for someone who values collaboration, delivers consistently, and is always eager to learn — let's talk. "
+  },
+  "contact_page": {
+    "title": "Get in Touch",
+    "subtitle": "Feel free to reach out for collaborations, opportunities, or just a friendly chat.",
+    "socials": [
+      {
+        "label": "Follow me on X",
+        "description": "Tech thoughts & updates"
+      },
+      {
+        "label": "Send an email",
+        "description": "For work inquiries"
+      },
+      {
+        "label": "Connect on LinkedIn",
+        "description": "Professional network"
+      }
+    ]
+  }
+}

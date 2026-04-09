@@ -1,59 +1,27 @@
 import type { Work } from "@/lib/definitions"
 import { OuterAvatar } from "./ui/avatar"
 import { Skeleton } from "./ui/skeleton"
+import type { Dictionary } from "@/lib/dictionaries"
 
-const getWorks = async (): Promise<Work[] | null> => {
-  try {
-    return [
-      {
-        title: "Elipce Solutions",
-        job: "Software Engineer",
-        date: "2025 - Present",
-        url: "elipce.jpg",
-      },
-      {
-        title: "CBA Informatique Libérale",
-        job: "Fullstack developer",
-        date: "2023 - 2024",
-        url: "cba.jpg",
-      },
-      {
-        title: "Arche MC2",
-        job: "Mobile Developer",
-        date: "2018 - 2023",
-        url: "arche-mc2.png",
-      },
-      {
-        title: "Logic'gram",
-        job: "Analyst developer",
-        date: "2017 - 2018",
-        url: "lg.jpg",
-      },
-      {
-        title: "Master in Softare Engineering",
-        job: "Student",
-        date: "2015 - 2017",
-        url: "ceri.jpg",
-      },
-    ]
-  } catch (error) {
-    return null
-  }
-}
+const urls = [
+  "elipce.jpg",
+  "cba.jpg",
+  "arche-mc2.png",
+  "lg.jpg",
+  "ceri.jpg",
+]
 
-export const WorkList = async () => {
-  const works = await getWorks()
-
+export const WorkList = ({ dict }: { dict: Dictionary }) => {
   return (
     <>
-      {works?.map(({ title, url, job, date }: Work) => (
-        <div key={title} className="flex items-start text-sm gap-2">
-          <OuterAvatar src={url} />
+      {dict.works.map((work, index) => (
+        <div key={work.title} className="flex items-start text-sm gap-2">
+          <OuterAvatar src={urls[index]} />
           <div className="flex flex-col w-full gap-2">
-            <h1 className="text-foreground">{title}</h1>
-            <h2 className="flex-1 text-primary">{job}</h2>
+            <h1 className="text-foreground">{work.title}</h1>
+            <h2 className="flex-1 text-primary">{work.job}</h2>
             <div className="text-muted-foreground">
-              <h2>{date}</h2>
+              <h2>{work.date}</h2>
             </div>
           </div>
         </div>

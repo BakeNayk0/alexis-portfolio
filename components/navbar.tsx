@@ -1,13 +1,12 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { routes } from "../lib/definitions"
-import { usePathname, useRouter } from "next/navigation"
+import { routes } from "@/lib/definitions"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import { AlignJustify } from "lucide-react"
@@ -21,14 +20,14 @@ import {
   DrawerTrigger,
 } from "./ui/drawer"
 import { ThemeToggle } from "./theme-toggle"
+import type { Dictionary } from "@/lib/dictionaries"
 
-export const Navbar = () => {
+export const Navbar = ({ lang, dict }: { lang: string, dict: Dictionary }) => {
   const ref = useRef<HTMLElement>(null)
   const [isIntersecting, setIntersecting] = useState(true)
   const smallScreen = useMediaQuery("(max-width: 640px)")
   const pathname = usePathname()
   const [openDrawer, setOpenDrawer] = useState(false)
-  const router = useRouter()
 
   useEffect(() => {
     if (!ref.current) return
@@ -48,7 +47,7 @@ export const Navbar = () => {
         >
           <div className="flex items-center gap-3 px-4 py-4 sm:px-8">
             <Link
-              href="/"
+              href={`/${lang}`}
               className="flex h-10 w-10 items-center justify-center rounded-full ring ring-2 ring-primary/30"
             >
               <Avatar>
@@ -59,7 +58,7 @@ export const Navbar = () => {
             {smallScreen ? (
               <div className="flex min-w-0 flex-1 items-center gap-2">
                 <Link
-                  href="/"
+                  href={`/${lang}`}
                   className={cn("min-w-0 flex-1 truncate text-center text-sm text-muted-foreground font-mono")}
                 >
                   nayko.dev
@@ -78,32 +77,38 @@ export const Navbar = () => {
                   </DrawerTrigger>
                   <DrawerContent>
                     <DrawerHeader>
-                      <DrawerTitle className="font-sans">Dive into my world, roam around</DrawerTitle>
+                      <DrawerTitle className="font-sans">{dict.navbar.dive}</DrawerTitle>
                       <DrawerDescription className="font-mono">
-                        You can also visit Nekawa Tree for other projects, with the button below.
+                        {dict.navbar.visit_other}
                       </DrawerDescription>
                     </DrawerHeader>
                     <div className="flex flex-col gap-2 p-2">
-                      {routes.map(({ href, icon, description }) => (
-                        <Card key={href} className="flex flex-row items-center gap-2 p-2">
-                          {icon}
-                          <Link
-                            href={href}
-                            onClick={() => setOpenDrawer(false)}
-                            className={cn(
-                              "text-sm transition-all hover:text-primary font-mono",
-                              pathname.includes(href) && "text-primary",
-                            )}
-                          >
-                            {description}
-                          </Link>
-                        </Card>
-                      ))}
+                      {routes.map(({ href, icon }) => {
+                        const routeKey = href.replace('/', '') as keyof typeof dict.routes;
+                        const routeDict = dict.routes[routeKey];
+                        const localizedHref = `/${lang}${href}`;
+
+                        return (
+                          <Card key={href} className="flex flex-row items-center gap-2 p-2">
+                            {icon}
+                            <Link
+                              href={localizedHref}
+                              onClick={() => setOpenDrawer(false)}
+                              className={cn(
+                                "text-sm transition-all hover:text-primary font-mono",
+                                pathname.includes(localizedHref) && "text-primary",
+                              )}
+                            >
+                              {routeDict ? routeDict.description : href}
+                            </Link>
+                          </Card>
+                        )
+                      })}
                     </div>
                     <DrawerFooter>
                       <Button asChild onClick={() => setOpenDrawer(false)}>
                         <a href="https://tree.nekawa.fr" target="_blank" rel="noopener noreferrer">
-                          Visit Nekawa
+                          {dict.navbar.visit_nekawa}
                         </a>
                       </Button>
                     </DrawerFooter>
@@ -112,15 +117,21 @@ export const Navbar = () => {
               </div>
             ) : (
               <nav className="ml-auto flex items-center gap-4 text-sm">
-                {routes.map(({ href, label }) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    className={cn("transition-all hover:text-primary", pathname.includes(href) && "text-primary")}
-                  >
-                    {label}
-                  </Link>
-                ))}
+                {routes.map(({ href }) => {
+                   const routeKey = href.replace('/', '') as keyof typeof dict.routes;
+                   const routeDict = dict.routes[routeKey];
+                   const localizedHref = `/${lang}${href}`;
+
+                   return (
+                    <Link
+                      key={href}
+                      href={localizedHref}
+                      className={cn("transition-all hover:text-primary", pathname.includes(localizedHref) && "text-primary")}
+                    >
+                      {routeDict ? routeDict.label : href}
+                    </Link>
+                  )
+                })}
                 <ThemeToggle />
               </nav>
             )}
