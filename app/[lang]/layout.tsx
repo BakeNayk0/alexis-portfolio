@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'fr' }]
+}
+
 export default async function RootLayout(
   props: {
     children: React.ReactNode
