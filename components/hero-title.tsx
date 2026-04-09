@@ -55,7 +55,7 @@ export const HeroTitle = ({ dict }: { dict: Dictionary }) => {
         </Link>
         <Link href="/about">
           <Button
-            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary dark:hover:bg-primary/20 text-primary-300 hover:text-primary-foreground dark:hover:text-primary-200 border border-primary/20 hover:border-primary dark:hover:border-primary/40 transition-all duration-300 group cursor-pointer"
+            className="rounded-full pl-1 pr-4 gap-2 bg-primary/10 hover:bg-primary dark:hover:bg-primary/20 text-primary-700 dark:text-primary-300 hover:text-primary-foreground dark:hover:text-primary-200 border border-primary/20 hover:border-primary dark:hover:border-primary/40 transition-all duration-300 group cursor-pointer"
             variant="ghost"
           >
             <Image
