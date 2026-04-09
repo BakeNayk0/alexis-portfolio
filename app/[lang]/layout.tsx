@@ -1,11 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import "./globals.css"
+import "../globals.css"
 
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { Toaster } from "sonner"
 import { ThemeProvider } from "@/components/theme-provider"
+import { getDictionary } from "@/lib/dictionaries"
 
 export const metadata: Metadata = {
   title: "Alexis S.",
@@ -14,18 +15,26 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default async function RootLayout(
+  props: {
+    children: React.ReactNode
+    params: Promise<{ lang: string }>
+  }
+) {
+  const params = await props.params;
+  const dict = await getDictionary(params.lang);
+
+  const {
+    children
+  } = props;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={params.lang} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased min-h-screen font-sans">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
           <div className="bg-card/30 mx-auto flex min-h-screen w-full max-w-6xl flex-col border-x border-border/30 relative">
-            <Navbar />
+            <Navbar lang={params.lang} dict={dict} />
             <main className="flex-1 bg-transparent px-2 sm:px-4 mt-32 w-full min-w-0 flex justify-center z-[1]">
               {children}
             </main>
