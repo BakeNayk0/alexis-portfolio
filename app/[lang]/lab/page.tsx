@@ -20,6 +20,7 @@ interface SummonerProfile {
   summonerLevel: number;
   summonerId: string | null;
   accountId: string | null;
+  isStale: boolean;
   updatedAt: string;
   createdAt: string;
 }
@@ -150,7 +151,10 @@ async function SummonerProfileWidget() {
     const iconUrl = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${data.profileIconId}.png`;
 
     return (
-      <Card className="border-primary/10 bg-card/50 backdrop-blur-sm">
+      <Card className="border-primary/10 bg-card/50 backdrop-blur-sm relative overflow-hidden">
+        {data.isStale && (
+          <div className="absolute top-0 right-0 left-0 h-1 bg-amber-500/50" />
+        )}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Gamepad2 className="h-5 w-5 text-primary" />
@@ -158,9 +162,16 @@ async function SummonerProfileWidget() {
               League of Legends
             </h2>
           </div>
-          <Badge variant="secondary" className="px-3 bg-indigo-500/10 text-indigo-500 hover:bg-indigo-500/20 border-indigo-500/20">
-            Lv. {data.summonerLevel}
-          </Badge>
+          <div className="flex gap-2">
+            {data.isStale && (
+              <Badge variant="outline" className="px-2 bg-amber-500/10 text-amber-600 border-amber-500/20 gap-1.5">
+                <AlertCircle className="h-3 w-3" /> Stale
+              </Badge>
+            )}
+            <Badge variant="secondary" className="px-3 bg-indigo-500/10 text-indigo-500 hover:bg-indigo-500/20 border-indigo-500/20">
+              Lv. {data.summonerLevel}
+            </Badge>
+          </div>
         </div>
 
         <div className="flex items-center gap-4 mb-4">
@@ -192,6 +203,11 @@ async function SummonerProfileWidget() {
               {new Date(data.updatedAt).toLocaleString()}
             </span>
           </div>
+          {data.isStale && (
+            <p className="text-[10px] text-amber-600/80 bg-amber-500/5 p-2 rounded border border-amber-500/10">
+              Note: Data is currently served from cache as the Riot API key has expired.
+            </p>
+          )}
         </div>
       </Card>
     );
