@@ -59,7 +59,7 @@ export const HeroTitle = ({ dict }: { dict: Dictionary }) => {
             variant="ghost"
           >
             <Image
-              src="/alexis_japan.webp"
+              src="/nayko.png"
               alt="Alexis"
               width={32}
               height={32}
