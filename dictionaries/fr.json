@@ -1,123 +1,114 @@
 {
-  "navbar": {
-    "dive": "Plongez dans mon monde, explorez",
-    "visit_other": "Vous pouvez également visiter Nekawa Tree pour d'autres projets, via le bouton ci-dessous.",
-    "visit_nekawa": "Visiter Nekawa"
+  "meta": {
+    "title": "Alexis Sanchis — Ingénieur logiciel",
+    "description": "Ingénieur logiciel basé en France. Next.js, Nest.js, TypeScript et Python. Disponible pour de nouvelles opportunités."
   },
-  "routes": {
-    "about": {
-      "label": "À propos",
-      "description": "Apprenez-en un peu plus sur moi"
-    },
-    "contacts": {
-      "label": "Contacts",
-      "description": "Comment me contacter"
-    }
+  "nav": {
+    "switch_language": "Passer en anglais",
+    "toggle_theme": "Changer de thème"
   },
   "hero": {
-    "based_in": "Basé en France",
-    "french": "Français",
-    "english": "Anglais"
+    "role": "Ingénieur logiciel",
+    "name": "Alexis Sanchis",
+    "location": "France",
+    "summary": "Ingénieur logiciel franco-suisse, je développe des applications web et mobiles depuis 2017, en grande partie pour le secteur de la santé. Actuellement chez Elipce Solutions, principalement sur React, Next.js et TypeScript. Titulaire d'une certification RNCP en cybersécurité, j'intègre les standards OWASP dans mes développements. J'attache de l'importance à la clarté des échanges, à un code maintenable et à un travail sur lequel une équipe peut s'appuyer.",
+    "languages_label": "Langues",
+    "french": "Français — langue maternelle",
+    "english": "Anglais — bilingue",
+    "remote": "Ouvert au télétravail"
   },
-  "hero_title": {
-    "role": "Ingénieur Logiciel",
-    "hey": "Salut, moi c'est",
-    "about_me": "À propos de moi",
-    "modern_ai": "outils d'IA modernes",
-    "cybersecurity": "cybersécurité",
-    "desc_1": "Ingénieur logiciel franco-suisse axé sur ",
-    "desc_2": ", ",
-    "desc_3": ", et ",
-    "desc_4": ". Je suis un développeur collaboratif qui valorise l'apprentissage continu et la création d'applications fiables. J'aime utiliser des ",
-    "desc_5": " pour travailler efficacement et j'étends actuellement mes compétences en ",
-    "desc_6": " pour construire des systèmes plus sûrs."
+  "actions": {
+    "email": "M'écrire",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "resume": "Télécharger le CV"
   },
-  "overview": {
-    "experience": "Expérience",
-    "view_resume": "Voir le CV complet",
-    "skills": "Compétences & Technologies"
-  },
-  "works": [
-    {
-      "title": "Elipce Solutions",
-      "job": "Ingénieur Logiciel",
-      "date": "2025 - Présent"
-    },
-    {
-      "title": "CBA Informatique Libérale",
-      "job": "Développeur Fullstack",
-      "date": "2023 - 2024"
-    },
-    {
-      "title": "Arche MC2",
-      "job": "Développeur Mobile",
-      "date": "2018 - 2023"
-    },
-    {
-      "title": "Logic'gram",
-      "job": "Développeur Analyste",
-      "date": "2017 - 2018"
-    },
-    {
-      "title": "Master en Ingénierie Logicielle",
-      "job": "Étudiant",
-      "date": "2015 - 2017"
-    }
-  ],
-  "skills": [
-    {
-      "title": "Next.js",
-      "description": "Mon framework principal pour créer des applications web full-stack. Je m'appuie dessus pour le rendu côté serveur, les routes d'API, et tout ce qui se trouve entre les deux."
-    },
-    {
-      "title": "React",
-      "description": "La fondation de mon travail front-end. Je crée des interfaces utilisateur réutilisables et gère des états côté client complexes avec confiance."
-    },
-    {
-      "title": "TypeScript",
-      "description": "J'écris en TypeScript par défaut. Le typage fort détecte les bugs tôt, améliore le refactoring et rend le code plus facile à maintenir au fil du temps."
-    },
-    {
-      "title": "Nest.js",
-      "description": "Mon choix pour les services backend évolutifs. J'apprécie son architecture modulaire et la façon dont il s'adapte naturellement au domain-driven design."
-    },
-    {
-      "title": "Python",
-      "description": "Utilisé pour les scripts, l'automatisation et les outils de cybersécurité. Sa polyvalence le rend inestimable pour les défis CTF, le développement d'exploits et le prototypage rapide."
-    }
-  ],
-  "about_page": {
-    "hey": "Salut, moi c'est Alexis",
-    "subtitle": "Ingénieur logiciel franco-suisse",
-    "p1_1": "Je développe avec ",
-    "p1_2": ", ",
-    "p1_3": ", ",
-    "p1_4": " et ",
-    "p1_5": " — que ce soit pour des entreprises ou des projets collaboratifs. J'accorde de l'importance à une communication claire et je crois que les meilleurs produits naissent d'un solide alignement d'équipe. Bien que je puisse travailler de manière indépendante si nécessaire, je suis toujours désireux d'apprendre des autres et d'apporter ma propre expertise pour aider l'équipe à réussir.",
-    "p2_1": "Je suis également passionné par l'intersection entre le développement et la sécurité. Je développe actuellement mes compétences en ",
-    "p2_2": ", avec un accent sur la sécurité web et les pratiques de sécurité de base. Mon objectif est de combiner mon expérience en ingénierie avec un état d'esprit axé sur la sécurité pour aider à construire des systèmes plus sûrs et plus résilients.",
-    "p3_1": "Je suis un grand défenseur des outils de développement modernes. J'ai intégré ",
-    "p3_2": ", ",
-    "p3_3": " et ",
-    "p3_4": " dans mon flux de travail quotidien, ce qui me permet de me concentrer sur la résolution de problèmes complexes et de prototyper efficacement. Je suis enthousiasmé par l'avenir de l'IA dans l'ingénierie logicielle et par la façon dont elle peut permettre aux équipes de créer de meilleurs logiciels, plus rapidement.",
-    "p4": "Si vous cherchez quelqu'un qui valorise la collaboration, qui livre de manière cohérente et qui est toujours désireux d'apprendre — discutons-en. "
-  },
-  "contact_page": {
-    "title": "Contact",
-    "subtitle": "N'hésitez pas à me contacter pour des collaborations, des opportunités ou simplement pour discuter.",
-    "socials": [
+  "experience": {
+    "title": "Expérience",
+    "items": [
       {
-        "label": "Suivez-moi sur X",
-        "description": "Pensées et actualités tech"
+        "company": "Elipce Solutions",
+        "role": "Ingénieur logiciel",
+        "date": "2025 — Aujourd'hui",
+        "description": "Applications web et mobiles sur mesure pour différents clients, sur l'ensemble du cycle de vie projet. React, Ionic et TypeScript côté front ; Laravel et Django côté back."
       },
       {
-        "label": "Envoyer un email",
-        "description": "Pour des demandes professionnelles"
+        "company": "CBA Informatique Libérale",
+        "role": "Développeur fullstack",
+        "date": "2023 — 2025",
+        "description": "Opaline Santé, plateforme de prise de rendez-vous pour les soins à domicile utilisée par plus de 80 000 utilisateurs, développée avec Next.js et Symfony. Maintenance et évolution de la librairie de composants UI en lien avec le design."
       },
       {
-        "label": "Se connecter sur LinkedIn",
-        "description": "Réseau professionnel"
+        "company": "Arche MC2",
+        "role": "Développeur Android",
+        "date": "2018 — 2023",
+        "description": "Applications Android pour les soins infirmiers à domicile et les EHPAD, conçues pour fonctionner hors ligne en zone à faible couverture réseau grâce à une base SQLite embarquée et un système de synchronisation. Java et Kotlin, puis migration vers Flutter."
+      },
+      {
+        "company": "Logic'gram",
+        "role": "Développeur",
+        "date": "2017",
+        "description": "Application mobile cross-platform en réalité augmentée sous Unity, affichant en temps réel des points d'intérêt géolocalisés, avec une couche native Swift pour iPad."
+      },
+      {
+        "company": "Master Génie Logiciel",
+        "role": "Université d'Avignon (CERI)",
+        "date": "2015 — 2017"
       }
     ]
+  },
+  "skills": {
+    "title": "Compétences",
+    "groups": [
+      {
+        "label": "Front-end",
+        "items": [
+          "Next.js",
+          "React",
+          "TypeScript"
+        ]
+      },
+      {
+        "label": "Mobile",
+        "items": [
+          "React Native",
+          "Android"
+        ]
+      },
+      {
+        "label": "Back-end",
+        "items": [
+          "Laravel",
+          "Django",
+          "Python"
+        ]
+      },
+      {
+        "label": "Workflow assisté par IA",
+        "items": [
+          "Claude Code",
+          "Gemini CLI"
+        ]
+      },
+      {
+        "label": "Sécurité",
+        "items": [
+          "OWASP",
+          "Test de pénétration",
+          "Hack The Box"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Me contacter",
+    "subtitle": "Ouvert à de nouvelles opportunités. Le plus simple est de m'écrire par e-mail — je réponds à chaque message.",
+    "email_note": "Préférence",
+    "linkedin_note": "Profil professionnel",
+    "github_note": "Code et projets personnels",
+    "resume_note": "PDF"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
   }
 }

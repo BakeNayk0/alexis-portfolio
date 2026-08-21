@@ -1,71 +1,46 @@
-import { CircleUser, AtSign } from "lucide-react"
+import { Github, Linkedin, Mail, FileText } from "lucide-react"
 import type { ReactNode } from "react"
 
-export type Work = {
-  title: string
-  job: string
-  description?: string
-  date: string
-  url?: string
-}
+export const EMAIL = "sanchis.alexis@gmail.com"
 
-export type Skill = {
-  title: string
-  description: string
-  url?: string
-}
-
-export type Blog = {
-  id: number
-  title: string
-  slug: string
-  createdAt: string
-  excerpt?: string
-  content?: string
-}
-
-export type Hero = {
-  name: string
-  greetings: string
-  description: string
-}
-
-type Route = {
+export type ContactLink = {
+  key: "email" | "linkedin" | "github" | "resume"
   href: string
-  label: string
-  description?: string
-  icon?: ReactNode
+  icon: ReactNode
+  value: string
+  external: boolean
 }
 
-export const routes: Route[] = [
+export const contactLinks: ContactLink[] = [
   {
-    href: "/about",
-    label: "About",
-    description: "Know a little bit more about me",
-    icon: <CircleUser size={"20"} />,
+    key: "email",
+    href: `mailto:${EMAIL}`,
+    icon: <Mail className="h-5 w-5" />,
+    value: EMAIL,
+    external: false,
   },
   {
-    href: "/contacts",
-    label: "Contacts",
-    description: "How to contact me",
-    icon: <AtSign size={"20"} />,
+    key: "linkedin",
+    href: "https://www.linkedin.com/in/alexis-sanchis-617301129/",
+    icon: <Linkedin className="h-5 w-5" />,
+    value: "in/alexis-sanchis",
+    external: true,
+  },
+  {
+    key: "github",
+    href: "https://github.com/BakeNayk0",
+    icon: <Github className="h-5 w-5" />,
+    value: "BakeNayk0",
+    external: true,
+  },
+  {
+    key: "resume",
+    href: "/cv_alexis_sanchis.pdf",
+    icon: <FileText className="h-5 w-5" />,
+    value: "cv_alexis_sanchis.pdf",
+    external: true,
   },
 ]
 
-export type ProductType = {
-  id: string
-  title: string
-  handle: string
-  featuredImage: {
-    url: string
-  }
-}
-
-export type CollectionType = {
-  id: string
-  title: string
-  handle: string
-  image: {
-    url: string
-  }
-}
+// Company/school logos, index-aligned with dict.experience.items
+export const experienceLogos = ["elipce.jpg", "cba.jpg", "arche-mc2.png", "lg.jpg", "ceri.jpg"]
