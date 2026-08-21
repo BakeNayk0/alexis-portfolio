@@ -1,30 +1,57 @@
-# alexisdev
+# alexis-portfolio
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Source for **[nayko.dev](https://nayko.dev)** — the personal site and online CV of
+Alexis Sanchis, a software engineer based in France.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/cybernayk0gmailcoms-projects/v0-alexisdev)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/jd57t4tvxqu)
+A single bilingual page (English / French) covering experience, skills and
+contact details, built to be read quickly rather than browsed.
 
-## Overview
+## Stack
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- **Next.js 15** (App Router) and **React 19** — server components by default
+- **TypeScript**
+- **Tailwind CSS v4** — CSS-first config, no `tailwind.config.js`
+- **next-themes** for light and dark
+- Locale negotiation in `middleware.ts`, both locales prerendered
 
-## Deployment
+## Running locally
 
-Your project is live at:
+```bash
+pnpm install
+pnpm dev        # http://localhost:3001
+```
 
-**[https://vercel.com/cybernayk0gmailcoms-projects/v0-alexisdev](https://vercel.com/cybernayk0gmailcoms-projects/v0-alexisdev)**
+```bash
+pnpm build && pnpm start   # production build
+npx tsc --noEmit           # typecheck
+```
 
-## Build your app
+`next.config.mjs` sets `ignoreBuildErrors` and `ignoreDuringBuilds`, so a green
+build does not imply a clean typecheck — run `tsc` separately.
 
-Continue building your app on:
+## Internationalisation
 
-**[https://v0.app/chat/jd57t4tvxqu](https://v0.app/chat/jd57t4tvxqu)**
+Every route lives under `app/[lang]/`. All user-facing copy is in
+`dictionaries/en.json` and `dictionaries/fr.json`, which must stay structurally
+identical: the `Dictionary` type is inferred from the English file alone, so a
+missing French key will not be caught by the compiler.
 
-## How It Works
+Components receive the resolved dictionary as a `dict` prop. Internal links must
+carry the locale (`` href={`/${lang}`} ``) to avoid a middleware redirect.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Structure
+
+```
+app/[lang]/page.tsx    the single page: hero, experience, skills, contact
+app/[lang]/layout.tsx  shell, theme provider, metadata
+app/globals.css        Tailwind entry point and theme tokens
+components/sections/   one component per page section
+components/ui/         shadcn/ui primitives
+dictionaries/          all copy, one file per locale
+lib/definitions.tsx    contact links and experience logos
+middleware.ts          locale negotiation
+```
+
+## Author
+
+[Alexis Sanchis](https://nayko.dev) — [LinkedIn](https://www.linkedin.com/in/alexis-sanchis-617301129/)
