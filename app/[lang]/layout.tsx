@@ -4,47 +4,49 @@ import "../globals.css"
 
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
-import { Toaster } from "sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 import { getDictionary } from "@/lib/dictionaries"
 
-export const metadata: Metadata = {
-  title: "Alexis S.",
-  description: "Fullstack developer",
-  icons: "nayko_logo.png",
-  generator: "v0.app",
-}
-
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'fr' }]
+  return [{ lang: "en" }, { lang: "fr" }]
 }
 
-export default async function RootLayout(
-  props: {
-    children: React.ReactNode
-    params: Promise<{ lang: string }>
-  }
-) {
-  const params = await props.params;
-  const dict = await getDictionary(params.lang);
+export async function generateMetadata(props: {
+  params: Promise<{ lang: string }>
+}): Promise<Metadata> {
+  const params = await props.params
+  const dict = await getDictionary(params.lang)
 
-  const {
-    children
-  } = props;
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    icons: { icon: "/nayko.png" },
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      type: "profile",
+      locale: params.lang === "fr" ? "fr_FR" : "en_US",
+    },
+  }
+}
+
+export default async function RootLayout(props: {
+  children: React.ReactNode
+  params: Promise<{ lang: string }>
+}) {
+  const params = await props.params
+  const dict = await getDictionary(params.lang)
+  const { children } = props
 
   return (
     <html lang={params.lang} suppressHydrationWarning>
-      <body className="bg-background text-foreground antialiased min-h-screen font-sans">
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
-          <div className="bg-card/30 mx-auto flex min-h-screen w-full max-w-6xl flex-col border-x border-border/30 relative">
+          <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-4 sm:px-6">
             <Navbar lang={params.lang} dict={dict} />
-            <main className="flex-1 bg-transparent px-2 sm:px-4 mt-32 w-full min-w-0 flex justify-center z-[1]">
-              {children}
-            </main>
-            <Footer />
+            <main className="flex-1 pt-28 sm:pt-32">{children}</main>
+            <Footer dict={dict} />
           </div>
-          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>

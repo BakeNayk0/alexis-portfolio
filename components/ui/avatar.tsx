@@ -37,12 +37,19 @@ const AvatarFallback = React.forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-const OuterAvatar = ({ className, src }: React.ComponentPropsWithoutRef<typeof AvatarImage>) => {
+const OuterAvatar = ({ className, src, alt }: React.ComponentPropsWithoutRef<typeof AvatarImage>) => {
+  const initials = (alt ?? "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0]?.toUpperCase())
+    .join("")
+
   return (
-    <div className={cn("p-1 bg-muted rounded-full border border-2 border-primary/30", className)}>
+    <div className={cn("p-1 bg-muted rounded-full border border-2 border-primary/30 shrink-0", className)}>
       <Avatar className="w-8 h-8">
-        <AvatarImage src={src || "/placeholder.svg"} />
-        <AvatarFallback>AMC2</AvatarFallback>
+        <AvatarImage src={src} alt={alt} className="object-contain" />
+        <AvatarFallback className="text-[10px] font-medium">{initials}</AvatarFallback>
       </Avatar>
     </div>
   )
